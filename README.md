@@ -64,3 +64,23 @@ GET /megacorp/employee/_search
     }
 }
 ```
+
+## Highlighting
+
+Add a new "highlight" parameter containing the field names you wish to highlight.
+
+```
+GET /my_index/my_type/_search
+{
+    "query" : {
+        "match" : {
+            "name" : "Joe Max"
+        }
+    },
+    "highlight": {
+        "fields" : {
+            "name" : {}
+        }
+    }
+}
+```
