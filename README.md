@@ -33,7 +33,7 @@ PUT /{index}/{type}/{id}
 
 ### Indexing a document with auto-generated id
 
-We can also let elasticsearch to auto-generate the id for the indexed document. To do that, we use the verb `POST` and we skip the id in the query:
+We can also let elasticsearch to auto-generate the id for the indexed document. To do that, we use the verb `POST` and we skip the id in the query. [See more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/index-doc.html)
 
 ```
 POST /{index}/{type}/
@@ -45,7 +45,7 @@ POST /{index}/{type}/
 
 ## Retrieving documents
 
-To get a document by its id, we use the `GET` verb:
+To get a document by its id, we use the `GET` verb. [See more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/get-doc.html)
 
 ```
 GET /{index}/{type}/{id}
