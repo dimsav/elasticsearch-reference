@@ -4,6 +4,7 @@ elasticsearch-reference
 * [Terminology](#terminology)
 * [Storing](#storing-documents)
 * [Retrieving](#retrieving-documents)
+* [Deleting](#deleting-documents)
 * [Searching](#searching)
 
 ## Terminology
@@ -21,7 +22,7 @@ The action of saving documents to elasticsearch, is called "indexing".  [See mor
 
 ### Indexing a document with known id
 
-To index a document with specific id, we use the `PUT` verb. If this id is not already indexed, a new document will be created. If the id is already indexed, the document will be overwritten.
+To index a document with specific id, we use the `PUT` verb. If this id is not already indexed, a new document will be created. If the id is already indexed, the whole document will be overwritten.
 
 ```
 PUT /{index}/{type}/{id}
@@ -49,6 +50,16 @@ To get a document by its id, we use the `GET` verb. [See more](http://www.elasti
 
 ```
 GET /{index}/{type}/{id}
+```
+
+To check if the document exists, check the status code of the response. A code `404 Not Found` will be returned if not.
+
+## Deleting documents
+
+This is the syntax to delete a document with known id. Same as before, different status codes will be returned if the delete was succesfull or not. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/delete-doc.html)
+
+```
+DELETE /{index}/{type}/{id}
 ```
 
 ## Searching
