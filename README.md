@@ -1,7 +1,7 @@
 elasticsearch-reference
 =======================
 
-## Elasticsearch vs Sql
+## Terminology
 
 Elasticsearch  | Sql
 -------------: | :-------------
@@ -10,6 +10,31 @@ Table  | Type
 Row | Document
 Column | Field
 
+## Storing documents
+
+### Saving a document with known id
+
+To save a new/existing document with known id, we use the `PUT` verb:
+
+```
+PUT /{index}/{type}/{id}
+{
+  "field": "value",
+  ...
+}
+```
+
+### Saving a document with auto-generated id
+
+To save a new/existing document we use the verb `POST`. Elasticsearch will generate an id.
+
+```
+POST /{index}/{type}/
+{
+  "field": "value",
+  ...
+}
+```
 
 ## Match search
 
