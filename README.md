@@ -12,9 +12,11 @@ Column | Field
 
 ## Storing documents
 
-### Saving a document with known id
+The action of saving documents to elasticsearch, is called "indexing".
 
-To save a new/existing document with known id, we use the `PUT` verb:
+### Indexing a document with known id
+
+To index a document with specific id, we use the `PUT` verb. If this id is not already indexed, a new document will be created. If the id is already indexed, the document will be overwritten.
 
 ```
 PUT /{index}/{type}/{id}
@@ -24,9 +26,9 @@ PUT /{index}/{type}/{id}
 }
 ```
 
-### Saving a document with auto-generated id
+### Indexing a document with auto-generated id
 
-To save a new/existing document we use the verb `POST`. Elasticsearch will generate an id.
+We can also let elasticsearch to auto-generate the id for the indexed document. To do that, we use the verb `POST` and we skip the id in the query:
 
 ```
 POST /{index}/{type}/
