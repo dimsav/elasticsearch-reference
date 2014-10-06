@@ -43,9 +43,13 @@ POST /{index}/{type}/
 }
 ```
 
-## Retrieving
+## Retrieving documents
 
+To get a document by its id, we use the `GET` verb:
 
+```
+GET /{index}/{type}/{id}
+```
 
 ## Searching
 
