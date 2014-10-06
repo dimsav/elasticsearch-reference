@@ -1,9 +1,9 @@
 elasticsearch-reference
 =======================
 
-## Elasticsearch vs MySql
+## Elasticsearch vs Sql
 
-Elasticsearch  | MySql
+Elasticsearch  | Sql
 -------------: | :-------------
 Database  | Index
 Table  | Type
