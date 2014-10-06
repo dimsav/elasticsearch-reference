@@ -12,16 +12,31 @@ Row - Document
 Column - Field
 
 
-## Searching
+## Match search
 
-Returns documents where `first_name` matches (contains) "Joe". Ex: "Joe", "Joe Max".
+Returns documents where `name` matches "Joe Max". Ex: "Joe Max", "Joe Backer".
 
 ```
 GET /my_index/my_type/_search
 {
     "query" : {
         "match" : {
-            "first_name" : "Joe"
+            "name" : "Joe Max"
+        }
+    }
+}
+```
+
+## Phrase search
+
+Phrase search returns matches containing the exact term. Ex: it won't return "Joe Backer".
+
+```
+GET /my_index/my_type/_search
+{
+    "query" : {
+        "match_phrase" : {
+            "name" : "Joe Max"
         }
     }
 }
@@ -29,7 +44,7 @@ GET /my_index/my_type/_search
 
 ## Filtering
 
-Fiters the above results by requiring `age` to be greater than 30.
+Searches for documents where name matches "Joe" and fiters them by requiring `age` to be greater than 30.
 
 ```
 GET /megacorp/employee/_search
@@ -43,7 +58,7 @@ GET /megacorp/employee/_search
             },
             "query" : {
                 "match" : {
-                    "first_name" : "Joe" 
+                    "name" : "Joe" 
                 }
             }
         }
