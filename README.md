@@ -14,7 +14,7 @@ Column - Field
 
 ## Searching
 
-Returns documents with `first_name` = "Joe"
+Returns documents where `first_name` matches (contains) "Joe". Ex: "Joe", "Joe Max".
 
 ```
 GET /my_index/my_type/_search
