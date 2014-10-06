@@ -67,7 +67,7 @@ GET /megacorp/employee/_search
 
 ## Highlighting
 
-Add a new "highlight" parameter containing the field names you wish to highlight.
+Add a new "highlight" parameter containing the field names you wish to highlight. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/reference/1.4/search-request-highlighting.html)
 
 ```
 GET /my_index/my_type/_search
