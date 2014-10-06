@@ -26,3 +26,27 @@ GET /my_index/my_type/_search
     }
 }
 ```
+
+## Filtering
+
+Fiters the above results by requiring `age` to be greater than 30.
+
+```
+GET /megacorp/employee/_search
+{
+   "query" : {
+        "filtered" : {
+            "filter" : {
+                "range" : {
+                    "age" : { "gt" : 30 } 
+                }
+            },
+            "query" : {
+                "match" : {
+                    "first_name" : "Joe" 
+                }
+            }
+        }
+    }
+}
+```
