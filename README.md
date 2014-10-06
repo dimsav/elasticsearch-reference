@@ -17,7 +17,7 @@ Column | Field
 
 ## Storing documents
 
-The action of saving documents to elasticsearch, is called "indexing".
+The action of saving documents to elasticsearch, is called "indexing".  [See more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/index-doc.html)
 
 ### Indexing a document with known id
 
@@ -33,7 +33,7 @@ PUT /{index}/{type}/{id}
 
 ### Indexing a document with auto-generated id
 
-We can also let elasticsearch to auto-generate the id for the indexed document. To do that, we use the verb `POST` and we skip the id in the query. [See more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/index-doc.html)
+We can also let elasticsearch to auto-generate the id for the indexed document. To do that, we use the verb `POST` and we skip the id in the query.
 
 ```
 POST /{index}/{type}/
