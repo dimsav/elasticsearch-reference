@@ -1,7 +1,7 @@
 elasticsearch-reference
 =======================
 
-## Elastic search vs MySql
+## Elasticsearch vs MySql
 
 Database - Index
 Table - Type
