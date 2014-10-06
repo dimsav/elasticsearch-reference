@@ -1,6 +1,11 @@
 elasticsearch-reference
 =======================
 
+* [Terminology](#terminology)
+* [Storing](#storing-documents)
+* [Retrieving](#retrieving-documents)
+* [Searching](#searching)
+
 ## Terminology
 
 Elasticsearch  | Sql
@@ -38,7 +43,13 @@ POST /{index}/{type}/
 }
 ```
 
-## Match search
+## Retrieving
+
+
+
+## Searching
+
+### Match search
 
 Returns documents where `name` matches "Joe Max". Ex: "Joe Max", "Joe Backer".
 
@@ -53,7 +64,7 @@ GET /my_index/my_type/_search
 }
 ```
 
-## Phrase search
+### Phrase search
 
 Phrase search returns matches containing the exact term. Ex: it won't return "Joe Backer".
 
@@ -68,7 +79,7 @@ GET /my_index/my_type/_search
 }
 ```
 
-## Filtering
+### Filtering
 
 Searches for documents where name matches "Joe" and fiters them by requiring `age` to be greater than 30.
 
@@ -92,7 +103,7 @@ GET /megacorp/employee/_search
 }
 ```
 
-## Highlighting
+### Highlighting results
 
 Add a new "highlight" parameter containing the field names you wish to highlight. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/reference/1.4/search-request-highlighting.html)
 
