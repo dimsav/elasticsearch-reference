@@ -3,13 +3,12 @@ elasticsearch-reference
 
 ## Elasticsearch vs MySql
 
-Database - Index
-
-Table - Type
-
-Row - Document
-
-Column - Field
+Elasticsearch  | MySql
+-------------: | :-------------
+Database  | Index
+Table  | Type
+Row | Document
+Column | Field
 
 
 ## Match search
