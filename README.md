@@ -128,6 +128,18 @@ Search types `user` and `tweet` in all indices:
 GET /_all/user,tweet/_search
 ```
 
+## Search queries
+
+### The lite query string
+
+This type of query includes the search parameters in the query string. It doesn't require any request body as opposed to the `full request body` search version. [Learn more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/search-lite.html)
+
+* It is very powerful, so use it only by users you trust.
+* It is intended for use only in developing environments.
+
+```
+GET /{index}/{type}/_search?q=tweet:elasticsearch
+```
 
 ### Match search
 
