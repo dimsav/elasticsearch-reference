@@ -12,10 +12,10 @@ elasticsearch-reference
 
 Elasticsearch  | Sql
 -------------: | :-------------
-Database  | Index
-Table  | Type
-Row | Document
-Column | Field
+Index  | Database
+Type  | Table
+Document | Row
+Field | Column
 
 **Node**: A node is a running instance of Elasticsearch.
 
