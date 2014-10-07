@@ -6,6 +6,7 @@ elasticsearch-reference
 * [Retrieving](#retrieving-documents)
 * [Deleting](#deleting-documents)
 * [Searching](#searching)
+* [Health](#cluster-health)
 
 ## Terminology
 
@@ -15,6 +16,12 @@ Database  | Index
 Table  | Type
 Row | Document
 Column | Field
+
+**Node**: A node is a running instance of Elasticsearch.
+
+**Cluster**: a cluster consists of one or more nodes with the same `cluster.name` that are working together to share their data and workload
+
+**Master Node**: One node in the cluster is elected to be the master node. It is in charge of managing cluster-wide changes like creating or deleting an index, or adding or removing a node from the cluster.
 
 ## Storing documents
 
@@ -137,3 +144,36 @@ GET /my_index/my_type/_search
     }
 }
 ```
+
+## Cluster health
+
+To get the status of the system do:
+
+```
+GET /_cluster/health
+```
+
+The response will be something like: 
+
+```
+{
+   "cluster_name":          "elasticsearch",
+   "status":                "green", 
+   "timed_out":             false,
+   "number_of_nodes":       1,
+   "number_of_data_nodes":  1,
+   "active_primary_shards": 0,
+   "active_shards":         0,
+   "relocating_shards":     0,
+   "initializing_shards":   0,
+   "unassigned_shards":     0
+}
+```
+
+### Status:
+
+**green**: All primary and replica shards are active.
+
+**yellow**: All primary shards are active, but not all replica shards are active.
+
+**red**: Not all primary shards are active.
