@@ -23,6 +23,14 @@ Field | Column
 
 **Master Node**: One node in the cluster is elected to be the master node. It is in charge of managing cluster-wide changes like creating or deleting an index, or adding or removing a node from the cluster.
 
+---
+
+**Index**: a place to store related data. In reality, an index is just a “logical namespace” which points to one or more physical shards.
+
+**Shard**: A [shard](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/inside-a-shard.html) is a low-level “worker unit” which holds just a slice of all the data in the index. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_add_an_index.html)
+
+
+
 ## Storing documents
 
 The action of saving documents to elasticsearch, is called "indexing".  [See more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/index-doc.html)
