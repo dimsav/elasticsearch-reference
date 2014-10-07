@@ -81,7 +81,7 @@ DELETE /{index}/{type}/{id}
 
 ### Search in all indexes
 
-We can search for documents in all indexes and all types. The following request will return the first 10 documents in all indexes:
+We can search for documents in all indexes and all types. The following request will return the first 10 documents (see [pagination](#pagination-example)) in all indexes:
 
 ```
 GET /_search
@@ -191,6 +191,29 @@ GET /megacorp/employee/_search
 GET /_search?timeout=10ms
 ```
 
+**size**: How many results should be returned, defaults to `10`
+
+```
+GET /_search?size=5
+```
+
+**from**: How many initial results should be skipped, defaults to `0`
+
+```
+GET /_search?size=5&from=5
+```
+
+#### Pagination example
+
+If you wanted to show 5 results per page, then pages 1 to 3 could be requested as:
+
+```
+GET /_search?size=5
+GET /_search?size=5&from=5
+GET /_search?size=5&from=10
+```
+
+Warning: [Deep paging can problematic](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/pagination.html).
 
 
 ### Highlighting results
@@ -245,3 +268,7 @@ The response will be something like:
 **yellow**: All primary shards are active, but not all replica shards are active.
 
 **red**: Not all primary shards are active.
+
+## Credits
+
+Many of the sections above are parts of [elasticsearch-definitive-guide](https://github.com/elasticsearch/elasticsearch-definitive-guide).
