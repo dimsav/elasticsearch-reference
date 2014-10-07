@@ -1,17 +1,19 @@
 elasticsearch-reference
 =======================
 
-* [Terminology](#terminology)
-* [Storing](#storing-documents)
-* [Retrieving](#retrieving-documents)
-* [Deleting](#deleting-documents)
-* [Searching](#searching)
-* [Health](#cluster-health)
+1. [Terminology](#terminology)
+1. [Storing](#storing-documents)
+1. [Retrieving](#retrieving-documents)
+1. [Deleting](#deleting-documents)
+1. [Mapping](#mapping)
+1. [Searching](#searching)
+1. [Health](#cluster-health)
 
 ## Terminology
 
 Elasticsearch  | Sql
 -------------: | :-------------
+Mapping | Schema
 Index  | Database
 Type  | Table
 Document | Row
@@ -71,10 +73,20 @@ To check if the document exists, check the status code of the response. A code `
 
 ## Deleting documents
 
-This is the syntax to delete a document with known id. Same as before, different status codes will be returned if the delete was succesfull or not. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/delete-doc.html)
+This is the syntax to delete a document with known id. Same as before, different status codes will be returned if the delete was successful or not. [Read more](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/delete-doc.html)
 
 ```
 DELETE /{index}/{type}/{id}
+```
+
+## Mapping
+
+Mapping is the process of defining how a document should be mapped to the Search Engine. Elasticsearch dynamically generates a mapping for us, based on what it could guess about our field types. 
+
+To get the mapping of a type:
+
+```
+GET /{index}/_mapping/{type}
 ```
 
 ## Searching
