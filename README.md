@@ -79,6 +79,56 @@ DELETE /{index}/{type}/{id}
 
 ## Searching
 
+### Search in all indexes
+
+We can search for documents in all indexes and all types. The following request will return the first 10 documents in all indexes:
+
+```
+GET /_search
+```
+
+### Search in given indexes and types
+
+We can search for documents in a specific index:
+
+```
+GET /{index}/_search
+```
+
+Search in `gb` and `us` indexes:
+
+```
+GET /gb,us/_search
+```
+
+Search all types in any indices beginning with `g` or beginning with `u`
+
+```
+GET /g*,u*/_search
+```
+
+
+### Search in index types
+
+Alternatively, we can search for documents of a given type in a specific index:
+
+```
+GET /{index}/{type}/_search
+```
+
+Search types `user` and `tweet` in the `gb` and `us` indices:
+
+```
+GET /gb,us/user,tweet/_search
+```
+
+Search types `user` and `tweet` in all indices:
+
+```
+GET /_all/user,tweet/_search
+```
+
+
 ### Match search
 
 Returns documents where `name` matches "Joe Max". Ex: "Joe Max", "Joe Backer".
@@ -132,6 +182,16 @@ GET /megacorp/employee/_search
     }
 }
 ```
+
+### Parameters
+
+**timeout**: the number of miliseconds used to fetch the data. Alternative syntax: `10`, `10ms` or `1s` for 1 second.
+
+```
+GET /_search?timeout=10ms
+```
+
+
 
 ### Highlighting results
 
