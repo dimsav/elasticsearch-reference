@@ -8,6 +8,7 @@ elasticsearch-reference
 1. [Mapping](#mapping)
 1. [Searching](#searching)
 1. [Health](#cluster-health)
+1. [Debugging](pages/debugging-errors.md)
 
 ## Terminology
 
